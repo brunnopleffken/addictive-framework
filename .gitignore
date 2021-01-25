@@ -1,0 +1,19 @@
+# Ignore logs
+logs/*
+!logs/.keep
+
+# Ignore third-party components
+vendor/*
+!vendor/.keep
+
+# Composer
+composer.lock
+composer.phar
+
+# Operating system files
+## Windows
+[Dd]esktop.ini
+Thumbs.db
+## macOS
+.DS_Store
+._*
