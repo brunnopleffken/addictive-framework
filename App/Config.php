@@ -10,7 +10,7 @@ class Config
     const DB_PORT = 3306;
     const DB_USERNAME = 'root';
     const DB_PASSWORD = '';
-    const DB_NAME = 'framework';
+    const DB_NAME = '';
 
-    const SHOW_ERRORS = false;
+    const SHOW_ERRORS = true;
 }
