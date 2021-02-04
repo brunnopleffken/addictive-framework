@@ -29,6 +29,23 @@ abstract class Model
         }
     }
 
+    public static function raw($statement)
+    {
+        return self::$link->query($statement)->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    /**
+     * Get all objects
+     */
+    public static function all($condition = "")
+    {
+        $table = get_called_class()::$table;
+
+        $sql = "SELECT * FROM {$table} {$condition};";
+
+        return self::$link->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     /**
      * Finds an object in the collection responding to the ID.
      */
@@ -50,8 +67,6 @@ abstract class Model
         }
 
         $sql = "SELECT * FROM {$table} WHERE {$condition};";
-
-        var_dump(self::$link);
 
         if (is_array($id)) {
             return self::$link->query($sql)->fetchAll(PDO::FETCH_ASSOC);
